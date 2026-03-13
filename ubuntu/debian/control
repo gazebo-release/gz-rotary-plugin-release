@@ -1,0 +1,89 @@
+Source: gz-plugin
+Maintainer: Jose Luis Rivero <jrivero@osrfoundation.org>
+Section: science
+Priority: extra
+Build-Depends: cmake,
+               debhelper (>= 13),
+               doxygen,
+               libgz-cmake-dev,
+               libgz-utils-cli-dev,
+               libgz-utils-dev,
+               python3,
+               ruby-ronn
+Vcs-Browser: https://github.com/gazebosim/gz-plugin
+Vcs-Git: https://github.com/gazebo-release/gz-rotary-plugin-release
+Standards-Version: 4.5.1
+Homepage: https://github.com/gazebosim/gz-plugin
+
+Package: libgz-plugin
+Architecture: any
+Section: libs
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: libgz-plugin-generic
+Conflicts: libgz-plugin-generic, libgz-plugin1, libgz-plugin2, libgz-plugin3, libgz-plugin4
+Replaces: libgz-plugin1, libgz-plugin2, libgz-plugin3, libgz-plugin4
+Recommends: gz-plugin-cli
+Multi-Arch: same
+Description: Gazebo Plugin Library - Shared library
+ Gazebo Plugin is a component in the Gazebo framework, a set of libraries
+ designed to rapidly develop robot applications.
+ .
+ Package contains the shared library
+
+Package: libgz-plugin-dev
+Architecture: any
+Section: libdevel
+Depends: libgz-plugin (= ${binary:Version}),
+         libgz-cmake-dev,
+         libgz-utils-cli-dev,
+         libgz-utils-dev,
+         ${misc:Depends}
+Provides: libgz-plugin-dev-generic
+Conflicts: libgz-plugin-dev-generic, libgz-plugin1-dev, libgz-plugin2-dev, libgz-plugin3-dev, libgz-plugin4-dev
+Replaces: libgz-plugin1-dev, libgz-plugin2-dev, libgz-plugin3-dev, libgz-plugin4-dev
+Multi-Arch: same
+Description: Gazebo Plugin Library - Development files
+ Gazebo Plugin is a component in the Gazebo framework, a set of libraries
+ designed to rapidly develop robot applications.
+ .
+ Package contains the development files
+
+Package: gz-plugin-cli
+Architecture: any
+Depends: libgz-plugin (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Provides: gz-plugin-cli-generic
+Conflicts: gz-plugin-cli-generic, gz-plugin1-cli, gz-plugin2-cli, gz-plugin3-cli, gz-plugin4-cli
+Replaces: gz-plugin1-cli, gz-plugin2-cli, gz-plugin3-cli, gz-plugin4-cli
+Multi-Arch: no
+Description: Collection of useful code used by robotics apps - CLI tool
+ Gazebo Plugin is a component in the Gazebo framework, a set of libraries
+ designed to rapidly develop robot applications.
+ .
+ Gazebo plugin client tool
+
+Package: libgz-rotary-plugin
+Depends: libgz-plugin (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
+
+Package: libgz-rotary-plugin-dev
+Depends: libgz-plugin-dev (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
+
+Package: gz-rotary-plugin-cli
+Depends: gz-plugin-cli (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
