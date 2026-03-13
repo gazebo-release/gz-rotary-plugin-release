@@ -64,7 +64,7 @@ Description: Collection of useful code used by robotics apps - CLI tool
  .
  Gazebo plugin client tool
 
-Package: libgz-rotary-plugin
+Package: gz-rotary-plugin
 Depends: libgz-plugin (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -72,7 +72,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: libgz-rotary-plugin-dev
+Package: gz-rotary-plugin-dev
 Depends: libgz-plugin-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
