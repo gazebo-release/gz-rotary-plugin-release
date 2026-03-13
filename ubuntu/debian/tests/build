@@ -39,7 +39,7 @@ class CautiousBot : public virtual Drive
 {
 };
 
-IGNITION_ADD_PLUGIN(CautiousBot,
+GZ_ADD_PLUGIN(CautiousBot,
     CautiousBot::Drive)
 
 int main(int argc, char** argv) {
