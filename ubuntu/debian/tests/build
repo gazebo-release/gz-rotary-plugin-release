@@ -10,7 +10,7 @@ WORKDIR=$(mktemp -d)
 cd $WORKDIR
 
 cat <<EOF > CMakeLists.txt
-cmake_minimum_required(VERSION 3.5.1 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
 
 project(example)
 
